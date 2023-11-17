@@ -1,4 +1,10 @@
 # DatahubTool
+
+[![PyPI release](https://img.shields.io/pypi/v/ivcorrection.svg)](https://pypi.org/project/ivcorrection/)
+[![DOI](https://zenodo.org/badge/681861201.svg)](https://zenodo.org/badge/latestdoi/681861201)
+
+<img src="https://github.com/lbj2011/DatahubTool/blob/main/doc_img/duramat_logo.png" width="200"/>
+
 Toolkit for batch management of data in [DuraMAT Datahub](https://datahub.duramat.org/), like upload and delete.
 
 NOTE: only **authorised users** (API Key required, shown on user page of Datahub) can manage its owned project data in Datahub. 

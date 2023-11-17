@@ -83,7 +83,7 @@ def filter_prior_file_names(file_names: list[str]):
 
 def get_Datahub_file_names(datahub_package_name: str, headers: dict):
     """
-    Get all files's name in a given package in Datahub
+    Get all existing files's name in a given package in Datahub
 
     :param datahub_package_name: name of folder in Datahub
     :param headers: dict containing 'Authorization' API 
