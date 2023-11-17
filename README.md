@@ -1,7 +1,7 @@
 # DatahubTool
 
-[![PyPI release](https://img.shields.io/pypi/v/ivcorrection.svg)](https://pypi.org/project/ivcorrection/)
-[![DOI](https://zenodo.org/badge/681861201.svg)](https://zenodo.org/badge/latestdoi/681861201)
+[![PyPI release](https://img.shields.io/pypi/v/ivcorrection.svg)](https://pypi.org/project/datahubtool/)
+[![DOI](https://zenodo.org/badge/719921081.svg)](https://zenodo.org/doi/10.5281/zenodo.10150399)
 
 <img src="https://github.com/lbj2011/DatahubTool/blob/main/doc_img/duramat_logo.png" width="200"/>
 
