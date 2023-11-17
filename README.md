@@ -16,7 +16,7 @@ pip install datahubtool
 ```
 
 ## Package overview
-Here's a high level overview of the important functions of the package.
+Here is a high level overview of the important functions of the package.
 
 - 'get_local_file_names': Get the names of local files to upload in a given path
 - 'get_Datahub_file_names': Get all existing files's name in a given package in Datahub
