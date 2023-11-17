@@ -1,9 +1,7 @@
 # DatahubTool
 Toolkit for batch management of data in [DuraMAT Datahub](https://datahub.duramat.org/), like upload and delete.
 
-NOTE: only **authorised users** (API Key required) can manage its owned project data in Datahub. The API Key is shown on user page of Datahub.
-
-
+NOTE: only **authorised users** (API Key required, shown on user page of Datahub) can manage its owned project data in Datahub. 
 
 
 ## Installation
