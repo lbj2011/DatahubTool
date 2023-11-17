@@ -37,5 +37,11 @@ run_upload_pipeline(folder_path, datahub_package_name, headers,
                     file_format = file_format)
 ```
 
+When complete, it will print:
+
+```
+2/2 file(s) uploaded on 2023-11-17 14:20:24
+```
+
 ## Authors
 Baojie Li (LBNL)
