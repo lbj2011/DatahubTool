@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="datahubtool",
-    version="0.0.1",
+    version="0.0.2",
     author="baojieli",
     author_email="lbjxx2011@gmail.com",
     description="Data management toolkit for Duramat Datahub",
