@@ -2,7 +2,6 @@ import requests
 import re
 import os
 import json
-import numpy as np
 from datetime import datetime
 from tqdm import tqdm
 import zipfile
@@ -82,18 +81,18 @@ def filter_prior_file_names(file_names: list[str]):
 
     return prior_file_names
 
-def get_Datahub_file_names(package_name: str, headers: dict):
+def get_Datahub_file_names(datahub_package_name: str, headers: dict):
     """
     Get all files's name in a given package in Datahub
 
-    :param package_name: name of folder in Datahub
+    :param datahub_package_name: name of folder in Datahub
     :param headers: dict containing 'Authorization' API 
     :return file_names: list
 
     """
 
     response = requests.post('https://datahub.duramat.org/api/3/action/package_show',
-                        data={"id":package_name},
+                        data={"id":datahub_package_name},
                         headers=headers)
 
     allfiles = json.loads(response.text)['result']['resources']
@@ -104,18 +103,18 @@ def get_Datahub_file_names(package_name: str, headers: dict):
 
     return file_names
 
-def get_Datahub_file_id(package_name: str, headers: dict):
+def get_Datahub_file_id(datahub_package_name: str, headers: dict):
     """
     Get all files' id in a given package in Datahub
 
-    :param package_name: name of folder in Datahub
+    :param datahub_package_name: name of folder in Datahub
     :param headers: dict containing 'Authorization' API
     :return file_id: list
 
     """
 
     response = requests.post('https://datahub.duramat.org/api/3/action/package_show',
-                        data={"id":package_name},
+                        data={"id":datahub_package_name},
                         headers=headers)
 
     allfiles = json.loads(response.text)['result']['resources']
@@ -183,8 +182,6 @@ def compress_folder(parent_folder: str):
     :param parent_folder: path of the parent folder
     
     """
-    
-    parent_folder = './data/pictures/'
 
     # List all directories in the parent folder
     all_directories = sorted([d for d in os.listdir(parent_folder) if os.path.isdir(os.path.join(parent_folder, d))])
@@ -201,3 +198,18 @@ def compress_folder(parent_folder: str):
                     for file in files:
                         file_path = os.path.join(folder_name, file)
                         zipf.write(file_path, os.path.relpath(file_path, directory_path))
+
+def delete_Datahub_files(datahub_package_name, headers):
+    """
+    Delete all files of a package in Datahub.
+
+    :param datahub_package_name: name of folder in Datahub
+    :param headers: dict containing 'Authorization' API
+
+    """
+
+    ids = get_Datahub_file_id(datahub_package_name, headers)
+    for id in tqdm(ids):
+        res = requests.post('https://datahub.duramat.org/api/3/action/resource_delete',
+                                data={"id": id},
+                                headers = headers)
